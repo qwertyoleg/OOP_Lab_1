@@ -10,37 +10,6 @@
 
 using namespace std;
 
-//Метод, определяющий сброшен ли бит n и сброшен бит m в числе X.
-
-//Метод, который устанавливает шестой и старший бит в числе Y.
-
-/*
-Метод, приобразоаывающий число из дестичного
-в двоичное (десятичное целое число в массив нулей и едениц)
-*/
-void IntegerToBinaryArray(int IntegerNumber,char BinaryArrayNumber[])
-{
-    int BinaryArrayNumberCounter =0;
-    do {
-        if(IntegerNumber & 1)
-        {
-            BinaryArrayNumber[BinaryArrayNumberCounter] = '1';
-        }
-        else
-        {
-            BinaryArrayNumber[BinaryArrayNumberCounter] = '0';
-        }
-        BinaryArrayNumberCounter++;
-        IntegerNumber = IntegerNumber >> 1;
-    } while(IntegerNumber);
-}
-
-//Функция печати
-void PrintIntegerAsBinary(int x,int y)
-{
-    
-}
-
 
 int main(int argc, const char * argv[])
 {
@@ -52,15 +21,21 @@ int main(int argc, const char * argv[])
     
     //cin >> x;
     
-    x=21;
-    n=2;
-    m=4;
-    y=3;
+	x = 21;
+	y = 3;
+
+	n = 2;
+	m = 4;
+    
     if (x<0||y<0)
     {
         cout<<"You input negative numbers \n";
         return 0;
     }
+
+	char *arr;
+	IntegerToBinaryArray(x, arr);
+	cout <<"array  arr "<< arr<<"  /n/n\n\n";
     /*
      cout << "y >";
      cin >> y;
@@ -81,3 +56,36 @@ int main(int argc, const char * argv[])
     getchar();
     return 0;
 }
+
+//Метод, определяющий сброшен ли бит n и сброшен бит m в числе X.
+
+//Метод, который устанавливает шестой и старший бит в числе Y.
+
+/*
+Метод, приобразоаывающий число из дестичного
+в двоичное (десятичное целое число в массив нулей и едениц)
+*/
+void IntegerToBinaryArray(int IntegerNumber, char BinaryArrayNumber[])
+{
+	int BinaryArrayNumberCounter = 0;
+	do {
+		if (IntegerNumber & 1)
+		{
+			BinaryArrayNumber[BinaryArrayNumberCounter] = '1';
+		}
+		else
+		{
+			BinaryArrayNumber[BinaryArrayNumberCounter] = '0';
+		}
+		BinaryArrayNumberCounter++;
+		IntegerNumber = IntegerNumber >> 1;
+	} while (IntegerNumber);
+}
+
+//Функция печати
+void PrintIntegerAsBinary(int x, int y)
+{
+
+}
+
+
