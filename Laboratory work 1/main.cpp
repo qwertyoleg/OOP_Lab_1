@@ -14,6 +14,27 @@ using namespace std;
 
 //Метод, который устанавливает шестой и старший бит в числе Y.
 
+/*
+Метод, приобразоаывающий число из дестичного
+в двоичное (десятичное целое число в массив нулей и едениц)
+*/
+void IntegerToBinaryArray(int IntegerNumber,char BinaryArrayNumber[])
+{
+    int BinaryArrayNumberCounter =0;
+    do {
+        if(IntegerNumber & 1)
+        {
+            BinaryArrayNumber[BinaryArrayNumberCounter] = '1';
+        }
+        else
+        {
+            BinaryArrayNumber[BinaryArrayNumberCounter] = '0';
+        }
+        BinaryArrayNumberCounter++;
+        IntegerNumber = IntegerNumber >> 1;
+    } while(IntegerNumber);
+}
+
 //Функция печати
 void PrintIntegerAsBinary(int x,int y)
 {
